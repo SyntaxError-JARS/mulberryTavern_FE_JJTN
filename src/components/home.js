@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-export default function Welcome() {
+export default function Home() {
+    
     return (
         <>
             <div><h1>Welcome to Mulberry Tavern</h1></div>
