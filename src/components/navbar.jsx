@@ -7,7 +7,7 @@ export default function NavBar() {
         <span>     </span>
         <Link to = "/customer"><button>Customer</button></Link>
         <span>     </span>
-        <Link to = "/admin"><button>Admin</button></Link>
+        <Link to = "/admin-main"><button>Admin</button></Link>
     </nav>
     )
 }
