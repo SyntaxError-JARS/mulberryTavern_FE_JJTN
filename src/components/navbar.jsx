@@ -5,7 +5,7 @@ export default function NavBar() {
     <nav>
         <Link to = ""><button>Home</button></Link>
         <span>     </span>
-        <Link to = "/customer"><button>Customer</button></Link>
+        <Link to = "/cust-main"><button>Customer</button></Link>
         <span>     </span>
         <Link to = "/admin-main"><button>Admin</button></Link>
     </nav>

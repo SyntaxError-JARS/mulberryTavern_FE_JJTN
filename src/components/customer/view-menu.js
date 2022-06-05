@@ -25,14 +25,9 @@ export default function Menu() {
     }
     return (
         <>
-            <h1>Here is the menu</h1>
+            <h3>Here is the menu</h3>
             
             <button onClick={viewMenu}>GET</button>
-            
-            <div class="container">
-                <h2></h2>
-            </div>
-            
             <div class="container">
                 <table>
                     <tbody>{menuBody}</tbody>
