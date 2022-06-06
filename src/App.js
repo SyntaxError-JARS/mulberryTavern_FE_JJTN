@@ -13,7 +13,7 @@ export const userContext = createContext();
 
 function App() {
 
-  const [user, setUser] = useState({ uname: "Guest", pword: "hello" });
+  const [user, setUser] = useState({ uname: "Guest"});
 
   return (
     <BrowserRouter>

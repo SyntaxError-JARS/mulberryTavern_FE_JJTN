@@ -36,7 +36,7 @@ export default function CustLogin() {
             <h4>Registered customers can log in below.</h4>
             <input placeholder="Enter username" ref={unameInput}></input>
             <input type="password" placeholder="Enter password" ref={pwInput}></input>
-            <button onClick={login}>Login -POST-</button>
+            <button onClick={login}>POST</button>
         </>
     )
 }

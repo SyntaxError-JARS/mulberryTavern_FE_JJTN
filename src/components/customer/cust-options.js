@@ -7,6 +7,11 @@ export default function CustOptions() {
     const input2 = useRef();
     const input3 = useRef();
     const input4 = useRef();
+    const input5 = useRef();
+    const input6 = useRef();
+    const input7 = useRef();
+    const input8 = useRef();
+    const input9 = useRef();
 
     // async-await
     async function addorder() {
@@ -28,6 +33,37 @@ export default function CustOptions() {
         }
     }
 
+    async function addcc() {
+        // Whenever you are getting a useRefs value, make sure it's inside some function call. Otherwise it will
+        // error due to the refInput.current = undefined, meaning there is no .value available
+        const newcc = {
+            cc_number: input5.current.value,
+            cc_name: input6.current.value,
+            cvv: input7.current.value,
+            exp_date: input8.current.value,
+            zip: input9.current.value
+        };
+
+        try {
+            const response = await axios.post("http://localhost:8080/mulberry/cc", newcc);
+            console.log(response.data);
+        } catch (error) {
+            console.error(error.response.data);
+            alert(error.response.data);
+        }
+    }
+
+    async function logout() {
+        try {
+            const response = await axios.delete("http://localhost:8080/mulberry/login");
+            console.log(response.data);
+        } catch (error) {
+            console.error(error.response.data);
+            alert(error.response.data);
+        }
+
+    }
+
     return (
         <>
             <h3>Customer Dashboard</h3>
@@ -38,12 +74,14 @@ export default function CustOptions() {
             <input placeholder="Date" ref={input4}></input>
             <button onClick={addorder}>POST</button>
             <h4>Add credit card</h4>
-            <input placeholder="Item name" ref={input1}></input>
-            <input placeholder="Item name" ref={input1}></input>
-            <input placeholder="Item name" ref={input1}></input>
-            <input placeholder="Item name" ref={input1}></input>
-            <input placeholder="Item name" ref={input1}></input>
-            <button onClick={addorder}>POST</button>
+            <input placeholder="Credit Card Number" ref={input5}></input>
+            <input placeholder="Name on card" ref={input6}></input>
+            <input placeholder="CVV" ref={input7}></input>
+            <input placeholder="Expiry Date" ref={input8}></input>
+            <input placeholder="Zip code" ref={input9}></input>
+            <button onClick={addcc}>POST</button>
+            <h4>Logout</h4>
+            <button onClick={logout}>DELETE</button>
         </>
     );
 }

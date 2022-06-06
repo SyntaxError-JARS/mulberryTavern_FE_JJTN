@@ -7,7 +7,7 @@ export default function ViewMenu() {
 
     useEffect(() => {
         display();
-    }, [menuBody]);
+    }, []);
 
     async function display() {
         try {
