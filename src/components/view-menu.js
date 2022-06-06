@@ -1,10 +1,15 @@
-import { useState } from "react";
 
-export default function Menu() {
+import { useState, useEffect } from "react";
+
+export default function ViewMenu() {
     
     const [menuBody, setMenuBody] = useState([]);
 
-    async function viewMenu() {
+    useEffect(() => {
+        display();
+    }, [menuBody]);
+
+    async function display() {
         try {
             const response = await fetch("http://localhost:8080/mulberry/menu");
             const menu = await response.json();
@@ -27,7 +32,7 @@ export default function Menu() {
         <>
             <h3>Here is the menu</h3>
             
-            <button onClick={viewMenu}>GET</button>
+            
             <div class="container">
                 <table>
                     <tbody>{menuBody}</tbody>
